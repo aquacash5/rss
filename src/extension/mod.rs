@@ -29,6 +29,9 @@ pub mod dublincore;
 /// Types and methods for [Syndication](http://web.resource.org/rss/1.0/modules/syndication/) extensions.
 pub mod syndication;
 
+/// Types and methods for [Podcast](https://podcastindex.org/namespace/1.0) extensions.
+pub mod podcast;
+
 pub(crate) mod util;
 
 /// A map of extension namespace prefixes to local names to elements.

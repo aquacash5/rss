@@ -19,10 +19,10 @@ use crate::enclosure::Enclosure;
 use crate::error::Error;
 #[cfg(feature = "atom")]
 use crate::extension::atom;
-use crate::extension::dublincore;
 use crate::extension::itunes;
 use crate::extension::util::{extension_name, parse_extension};
 use crate::extension::ExtensionMap;
+use crate::extension::{dublincore, podcast};
 use crate::guid::Guid;
 use crate::source::Source;
 use crate::toxml::{ToXml, WriterExt};
@@ -74,6 +74,8 @@ pub struct Item {
     pub itunes_ext: Option<itunes::ITunesItemExtension>,
     /// The Dublin Core extension for the item.
     pub dublin_core_ext: Option<dublincore::DublinCoreExtension>,
+    /// The Podcast extension for item.
+    pub podcast_ext: Option<podcast::PodcastItemExtension>,
 }
 
 impl Item {
