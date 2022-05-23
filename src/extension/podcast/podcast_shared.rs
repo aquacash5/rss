@@ -29,3 +29,43 @@ pub struct PodcastPerson {
     /// The url to a relevant resource of information about the person.
     pub href: Option<String>,
 }
+
+/// The location of editorial focus for a podcast's content.
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+#[derive(Debug, Default, Clone, PartialEq)]
+#[cfg_attr(feature = "builders", derive(Builder))]
+#[cfg_attr(
+    feature = "builders",
+    builder(
+        setter(into),
+        default,
+        build_fn(name = "build_impl", private, error = "never::Never")
+    )
+)]
+pub struct PodcastLocation {
+    /// A human readable location.
+    pub name: String,
+    /// A latitude and longitude given in "geo" notation.
+    pub geo: Option<String>,
+    /// The Open Street Map identifier of this place.
+    pub osm: Option<String>,
+}
+
+/// The location of editorial focus for a podcast's content.
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+#[derive(Debug, Default, Clone, PartialEq)]
+#[cfg_attr(feature = "builders", derive(Builder))]
+#[cfg_attr(
+    feature = "builders",
+    builder(
+        setter(into),
+        default,
+        build_fn(name = "build_impl", private, error = "never::Never")
+    )
+)]
+pub struct PodcastLicense {
+    /// A lower-cased reference to a license "identifier".
+    pub identifier: String,
+    ///  url that points to the full, legal language of the license being referenced.
+    pub url: Option<String>,
+}
